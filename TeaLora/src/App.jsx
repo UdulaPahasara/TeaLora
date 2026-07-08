@@ -55,7 +55,7 @@ function App() {
             onClick={() => setShowWhatsapp(false)}
             sx={{
               position: 'absolute',
-              top: '-10px',
+              top: '-15px',
               right: '-5px',
               bgcolor: 'rgba(0,0,0,0.4)',
               color: '#fff',

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -13,6 +14,7 @@ import homeDis3 from '../../assets/Home/HomeDis3.webp';
 
 const Home = () => {
   const [showVision, setShowVision] = useState(true);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -214,6 +216,7 @@ const Home = () => {
             {/* Learn More Button */}
             <Button 
               variant="contained"
+              onClick={() => navigate('/about')}
               sx={{
                 width: { xs: '170px', sm: '209px' },
                 height: { xs: '40px', sm: '61px' },
@@ -433,6 +436,7 @@ const Home = () => {
               }}
             >
               <Button 
+                onClick={() => navigate('/sustainability')}
                 variant="contained"
                 sx={{
                   width: { xs: '170px', sm: '164px' },
@@ -454,6 +458,7 @@ const Home = () => {
                 Learn More
               </Button>
               <Box 
+                onClick={() => navigate('/sustainability')}
                 sx={{
                   width: { xs: '35px', sm: '60px' },
                   height: { xs: '35px', sm: '60px' },
