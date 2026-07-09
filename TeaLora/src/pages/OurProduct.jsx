@@ -1,21 +1,21 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import ourProductHero from '../../assets/OurProduct/ourProduct hero.webp';
-import signature1 from '../../assets/OurProduct/signature1.webp';
-import signature2 from '../../assets/OurProduct/signature2.webp';
-import signature3 from '../../assets/OurProduct/signature3.webp';
-import signature4 from '../../assets/OurProduct/signature4.webp';
-import signature5 from '../../assets/OurProduct/signature5.webp';
-import luxury1 from '../../assets/OurProduct/luxury1.webp';
-import luxury2 from '../../assets/OurProduct/luxury2.webp';
-import luxury3 from '../../assets/OurProduct/luxury3.webp';
-import luxury4 from '../../assets/OurProduct/luxury4.webp';
-import luxury5 from '../../assets/OurProduct/luxury5.webp';
-import classic1 from '../../assets/OurProduct/classic1.webp';
-import classic2 from '../../assets/OurProduct/classic2.webp';
-import classic3 from '../../assets/OurProduct/classic3.webp';
-import classic4 from '../../assets/OurProduct/classic4.webp';
-import classic5 from '../../assets/OurProduct/classic5.webp';
+import ourProductHero from '../assets/OurProduct/ourProduct hero.webp';
+import signature1 from '../assets/OurProduct/signature1.webp';
+import signature2 from '../assets/OurProduct/signature2.webp';
+import signature3 from '../assets/OurProduct/signature3.webp';
+import signature4 from '../assets/OurProduct/signature4.webp';
+import signature5 from '../assets/OurProduct/signature5.webp';
+import luxury1 from '../assets/OurProduct/luxury1.webp';
+import luxury2 from '../assets/OurProduct/luxury2.webp';
+import luxury3 from '../assets/OurProduct/luxury3.webp';
+import luxury4 from '../assets/OurProduct/luxury4.webp';
+import luxury5 from '../assets/OurProduct/luxury5.webp';
+import classic1 from '../assets/OurProduct/classic1.webp';
+import classic2 from '../assets/OurProduct/classic2.webp';
+import classic3 from '../assets/OurProduct/classic3.webp';
+import classic4 from '../assets/OurProduct/classic4.webp';
+import classic5 from '../assets/OurProduct/classic5.webp';
 
 const OurProduct = () => {
   return (

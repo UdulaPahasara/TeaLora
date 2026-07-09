@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { Box, Typography } from '@mui/material';
-import susHero from '../../assets/Sustainability/SusHero.webp';
-import ourCommit from '../../assets/Sustainability/ourCommit.webp';
-import responsible from '../../assets/Sustainability/responsible.webp';
-import eco from '../../assets/Sustainability/eco.webp';
-import supporting from '../../assets/Sustainability/supporting.webp';
-import enviromental from '../../assets/Sustainability/enviromental.webp';
-import health from '../../assets/Sustainability/health.webp';
-import promise1 from '../../assets/Sustainability/promise1.webp';
-import promise2 from '../../assets/Sustainability/promise2.webp';
-import promise3 from '../../assets/Sustainability/promise3.webp';
+import susHero from '../assets/Sustainability/SusHero.webp';
+import ourCommit from '../assets/Sustainability/ourCommit.webp';
+import responsible from '../assets/Sustainability/responsible.webp';
+import eco from '../assets/Sustainability/eco.webp';
+import supporting from '../assets/Sustainability/supporting.webp';
+import enviromental from '../assets/Sustainability/enviromental.webp';
+import health from '../assets/Sustainability/health.webp';
+import promise1 from '../assets/Sustainability/promise1.webp';
+import promise2 from '../assets/Sustainability/promise2.webp';
+import promise3 from '../assets/Sustainability/promise3.webp';
 
 const Sustainability = () => {
   const scrollContainerRef = useRef(null);

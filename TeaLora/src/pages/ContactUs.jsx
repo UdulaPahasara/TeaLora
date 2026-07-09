@@ -3,10 +3,10 @@ import emailjs from '@emailjs/browser';
 import { Box, Typography, TextField, Button, IconButton, Snackbar, Alert } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import { MuiTelInput } from 'mui-tel-input';
-import contactHero from '../../assets/ContactUs/contacthero.webp';
-import fbIcon from '../../assets/ContactUs/fb.webp';
-import instaIcon from '../../assets/ContactUs/insta.webp';
-import whatsappIcon from '../../assets/ContactUs/whatssapp.webp';
+import contactHero from '../assets/ContactUs/contacthero.webp';
+import fbIcon from '../assets/ContactUs/fb.webp';
+import instaIcon from '../assets/ContactUs/insta.webp';
+import whatsappIcon from '../assets/ContactUs/whatssapp.webp';
 
 const ContactUs = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);

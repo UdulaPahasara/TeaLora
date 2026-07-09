@@ -1,14 +1,14 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import aboutHero from '../../assets/AboutUS/AboutHero.webp';
-import who1 from '../../assets/AboutUS/who1.webp';
-import who2 from '../../assets/AboutUS/who2.webp';
-import who3 from '../../assets/AboutUS/who3.webp';
-import authentic from '../../assets/AboutUS/authentic.webp';
-import authenticBackground from '../../assets/AboutUS/authenticbackground.webp';
-import commitment1 from '../../assets/AboutUS/commitment1.webp';
-import commitment2 from '../../assets/AboutUS/commitment2.webp';
-import commitment3 from '../../assets/AboutUS/commitment3.webp';
+import aboutHero from '../assets/AboutUS/AboutHero.webp';
+import who1 from '../assets/AboutUS/who1.webp';
+import who2 from '../assets/AboutUS/who2.webp';
+import who3 from '../assets/AboutUS/who3.webp';
+import authentic from '../assets/AboutUS/authentic.webp';
+import authenticBackground from '../assets/AboutUS/authenticbackground.webp';
+import commitment1 from '../assets/AboutUS/commitment1.webp';
+import commitment2 from '../assets/AboutUS/commitment2.webp';
+import commitment3 from '../assets/AboutUS/commitment3.webp';
 
 const AboutUs = () => {
   return (

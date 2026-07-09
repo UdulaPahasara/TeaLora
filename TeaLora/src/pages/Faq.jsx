@@ -3,7 +3,7 @@ import { Box, Typography, Collapse } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 // Reusing ContactUs hero image as a placeholder for FAQ hero
-import faqHero from '../../assets/FAQ/faqHero.webp';
+import faqHero from '../assets/FAQ/faqHero.webp';
 
 const faqs = [
   {

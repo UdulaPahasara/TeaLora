@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import homeHero from '../../assets/Home/HomeHero.webp';
-import homePurposeImg from '../../assets/Home/HomePurposeImg.webp';
-import homeGlobalMap from '../../assets/Home/HomeGlobalMap.webp';
-import homeWhyUsImg from '../../assets/Home/HomeWhyUsImg.webp';
-import homeAbout from '../../assets/Home/HomeAboutImg.webp';
-import homeDis1 from '../../assets/Home/HomeDis1.webp';
-import homeDis2 from '../../assets/Home/HomeDis2.webp';
-import homeDis3 from '../../assets/Home/HomeDis3.webp';
+import homeHero from '../assets/Home/HomeHero.webp';
+import homePurposeImg from '../assets/Home/HomePurposeImg.webp';
+import homeGlobalMap from '../assets/Home/HomeGlobalMap.webp';
+import homeWhyUsImg from '../assets/Home/HomeWhyUsImg.webp';
+import homeAbout from '../assets/Home/HomeAboutImg.webp';
+import homeDis1 from '../assets/Home/HomeDis1.webp';
+import homeDis2 from '../assets/Home/HomeDis2.webp';
+import homeDis3 from '../assets/Home/HomeDis3.webp';
 
 const Home = () => {
   const [showVision, setShowVision] = useState(true);

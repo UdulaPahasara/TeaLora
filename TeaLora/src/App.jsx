@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { CssBaseline, Box } from '@mui/material';
-import Navbar from './Componets/Navbar/navbar';
-import Home from './Componets/Home/Home';
-import AboutUs from './Componets/AboutUS/AboutUs';
-import OurProduct from './Componets/OurProduct/OurProduct';
-import Sustainability from './Componets/Sustainability/Sustainability';
-import ContactUs from './Componets/ContactUs/ContactUs';
-import Faq from './Componets/FAQ/Faq';
-import Footer from './Componets/Footer/Footer';
+import Navbar from './components/Common/NavBar';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import OurProduct from './pages/OurProduct';
+import Sustainability from './pages/Sustainability';
+import ContactUs from './pages/ContactUs';
+import Faq from './pages/Faq';
+import Footer from './components/Common/Footer';
 import whatsappIcon from './assets/Home/whatsapp.webp';
 import './App.css';
 
