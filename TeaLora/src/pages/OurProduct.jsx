@@ -29,7 +29,7 @@ const OurProduct = () => {
         bgcolor: '#ffffff',
       }}
     >
-      <Seo title="Our Products" description="Discover beautifully curated premium Ceylon tea gift collections, thoughtfully crafted to bring together exceptional taste, elegant presentation, and the timeless heritage of Sri Lanka." />
+      <Seo title="Our Products" description="Explore TeaLora's premium tea gift collections. Choose from our Signature, Luxury, and Classic boxes. Perfect for corporate tea gifts and luxury tea gift boxes." />
       {/* Hero Section */}
       <Box
         sx={{

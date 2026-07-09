@@ -74,7 +74,7 @@ const ContactUs = () => {
         bgcolor: '#ffffff',
       }}
     >
-      <Seo title="Contact Us" description="We're here to answer your questions and help you discover the finest Ceylon tea. Get in touch with our team for inquiries, partnerships, or export opportunities." />
+      <Seo title="Contact Us" description="Contact TeaLora, your trusted wholesale Ceylon tea suppliers and bulk tea exporters in Sri Lanka. Get in touch for B2B partnerships and private label export opportunities." />
       {/* Hero Section */}
       <Box
         sx={{

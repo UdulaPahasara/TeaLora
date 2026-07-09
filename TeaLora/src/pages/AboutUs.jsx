@@ -22,7 +22,7 @@ const AboutUs = () => {
         bgcolor: '#ffffff',
       }}
     >
-      <Seo title="About Us" description="Experience the heritage of authentic Ceylon tea, carefully crafted in Sri Lanka and shared with tea lovers around the world." />
+      <Seo title="About Us" description="Discover TeaLora's heritage of producing authentic Sri Lankan tea. We are dedicated to ethically sourced, organic Ceylon tea crafted with passion and tradition." />
       {/* Hero Section */}
       <Box
         sx={{

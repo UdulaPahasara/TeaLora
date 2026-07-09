@@ -50,7 +50,7 @@ const Faq = () => {
         bgcolor: '#ffffff',
       }}
     >
-      <Seo title="FAQ" description="Find answers to the most frequently asked questions about our premium Ceylon tea, gift collections, export services, and customer support." />
+      <Seo title="FAQ" description="Find answers about TeaLora's premium Ceylon tea varieties, including white tea, cinnamon tea, ginger tea, and moringa tea. Learn about our export services." />
       {/* Hero Section */}
       <Box
         sx={{

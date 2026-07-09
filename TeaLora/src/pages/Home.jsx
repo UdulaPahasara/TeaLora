@@ -21,7 +21,7 @@ const Home = () => {
     <>
       <Seo 
         title="Home" 
-        description="Welcome to TeaLora, the finest organic Sri Lankan tea experience. Discover our unique flavors and sustainable process." 
+        description="Welcome to TeaLora, leading Ceylon Tea Exporters. Buy premium Ceylon tea online, including authentic Sri Lankan black tea, green tea, and luxury gift collections." 
       />
       <Box 
         sx={{
