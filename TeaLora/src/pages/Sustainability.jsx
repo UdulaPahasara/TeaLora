@@ -19,7 +19,6 @@ const Sustainability = () => {
   const handleScroll = () => {
     if (scrollContainerRef.current) {
       const scrollLeft = scrollContainerRef.current.scrollLeft;
-      // Card width (280px) + gap (20px) = 300px
       const cardWidth = 300;
       const index = Math.round(scrollLeft / cardWidth);
       if (index >= 0 && index <= 4 && index !== activeCardIndex) {
@@ -49,7 +48,7 @@ const Sustainability = () => {
         bgcolor: '#ffffff',
       }}
     >
-      <Seo title="Sustainability" description="At Tealora Ceylon, sustainability is at the heart of everything we do. From responsibly sourced tea leaves to eco-conscious practices, we are committed to protecting nature while delivering authentic Ceylon tea to the world." />
+      <Seo title="Sustainability" description="Learn about TeaLora's commitment to sustainable Ceylon tea. We prioritize eco-friendly tea packaging, responsible sourcing, and natural wellness tea products." />
       {/* Hero Section */}
       <Box
         sx={{
