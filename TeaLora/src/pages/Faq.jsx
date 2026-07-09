@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Typography, Collapse } from '@mui/material';
+import Seo from '../components/Common/Seo';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 // Reusing ContactUs hero image as a placeholder for FAQ hero
@@ -49,6 +50,7 @@ const Faq = () => {
         bgcolor: '#ffffff',
       }}
     >
+      <Seo title="FAQ" description="Find answers to the most frequently asked questions about our premium Ceylon tea, gift collections, export services, and customer support." />
       {/* Hero Section */}
       <Box
         sx={{

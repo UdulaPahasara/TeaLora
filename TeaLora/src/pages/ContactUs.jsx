@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Box, Typography, TextField, Button, IconButton, Snackbar, Alert } from '@mui/material';
+import Seo from '../components/Common/Seo';
 import { useForm, Controller } from 'react-hook-form';
 import { MuiTelInput } from 'mui-tel-input';
 import contactHero from '../assets/ContactUs/contacthero.webp';
@@ -73,6 +74,7 @@ const ContactUs = () => {
         bgcolor: '#ffffff',
       }}
     >
+      <Seo title="Contact Us" description="We're here to answer your questions and help you discover the finest Ceylon tea. Get in touch with our team for inquiries, partnerships, or export opportunities." />
       {/* Hero Section */}
       <Box
         sx={{

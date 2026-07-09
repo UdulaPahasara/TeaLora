@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Box, Typography } from '@mui/material';
+import Seo from '../components/Common/Seo';
 import susHero from '../assets/Sustainability/SusHero.webp';
 import ourCommit from '../assets/Sustainability/ourCommit.webp';
 import responsible from '../assets/Sustainability/responsible.webp';
@@ -48,6 +49,7 @@ const Sustainability = () => {
         bgcolor: '#ffffff',
       }}
     >
+      <Seo title="Sustainability" description="At Tealora Ceylon, sustainability is at the heart of everything we do. From responsibly sourced tea leaves to eco-conscious practices, we are committed to protecting nature while delivering authentic Ceylon tea to the world." />
       {/* Hero Section */}
       <Box
         sx={{

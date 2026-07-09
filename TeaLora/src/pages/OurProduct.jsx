@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import Seo from '../components/Common/Seo';
 import ourProductHero from '../assets/OurProduct/ourProduct hero.webp';
 import signature1 from '../assets/OurProduct/signature1.webp';
 import signature2 from '../assets/OurProduct/signature2.webp';
@@ -28,6 +29,7 @@ const OurProduct = () => {
         bgcolor: '#ffffff',
       }}
     >
+      <Seo title="Our Products" description="Discover beautifully curated premium Ceylon tea gift collections, thoughtfully crafted to bring together exceptional taste, elegant presentation, and the timeless heritage of Sri Lanka." />
       {/* Hero Section */}
       <Box
         sx={{

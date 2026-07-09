@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import Seo from '../components/Common/Seo';
 import aboutHero from '../assets/AboutUS/AboutHero.webp';
 import who1 from '../assets/AboutUS/who1.webp';
 import who2 from '../assets/AboutUS/who2.webp';
@@ -21,6 +22,7 @@ const AboutUs = () => {
         bgcolor: '#ffffff',
       }}
     >
+      <Seo title="About Us" description="Experience the heritage of authentic Ceylon tea, carefully crafted in Sri Lanka and shared with tea lovers around the world." />
       {/* Hero Section */}
       <Box
         sx={{

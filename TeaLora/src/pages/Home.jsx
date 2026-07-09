@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Seo from '../components/Common/Seo';
 import homeHero from '../assets/Home/HomeHero.webp';
 import homePurposeImg from '../assets/Home/HomePurposeImg.webp';
 import homeGlobalMap from '../assets/Home/HomeGlobalMap.webp';
@@ -18,6 +19,10 @@ const Home = () => {
 
   return (
     <>
+      <Seo 
+        title="Home" 
+        description="Welcome to TeaLora, the finest organic Sri Lankan tea experience. Discover our unique flavors and sustainable process." 
+      />
       <Box 
         sx={{
           width: '100%',
