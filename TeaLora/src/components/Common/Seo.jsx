@@ -20,14 +20,13 @@ export default function Seo({
       <meta name="description" content={siteDescription} /> 
 
       {/* 2. Facebook, WhatsApp, & LinkedIn (Open Graph) */} 
-      {/* This makes sure a cool preview card shows up when someone pastes your link in a chat! */} 
       <meta property="og:title" content={siteTitle} /> 
       <meta property="og:description" content={siteDescription} /> 
       <meta property="og:type" content={type} /> 
       <meta property="og:url" content={url} /> 
       <meta property="og:image" content={image} /> 
 
-      {/* 3. Twitter (Because they use slightly different tags) */} 
+      {/* 3. Twitter */} 
       <meta name="twitter:card" content="summary_large_image" /> 
       <meta name="twitter:title" content={siteTitle} /> 
       <meta name="twitter:description" content={siteDescription} /> 

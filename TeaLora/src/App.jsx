@@ -29,16 +29,20 @@ function App() {
     <>
       <ScrollToTop />
       <CssBaseline />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/products" element={<OurProduct />} />
-        <Route path="/sustainability" element={<Sustainability />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/faq" element={<Faq />} />
-      </Routes>
-      <Footer />
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Navbar />
+        <Box component="main" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/products" element={<OurProduct />} />
+            <Route path="/sustainability" element={<Sustainability />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/faq" element={<Faq />} />
+          </Routes>
+        </Box>
+        <Footer />
+      </Box>
       
       {/* Floating WhatsApp Button */}
       {showWhatsapp && (
