@@ -2,21 +2,93 @@ import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import Seo from '../components/Common/Seo';
 import ourProductHero from '../assets/OurProduct/ourProduct hero.webp';
-import signature1 from '../assets/OurProduct/signature1.webp';
-import signature2 from '../assets/OurProduct/signature2.webp';
-import signature3 from '../assets/OurProduct/signature3.webp';
-import signature4 from '../assets/OurProduct/signature4.webp';
-import signature5 from '../assets/OurProduct/signature5.webp';
-import luxury1 from '../assets/OurProduct/luxury1.webp';
-import luxury2 from '../assets/OurProduct/luxury2.webp';
-import luxury3 from '../assets/OurProduct/luxury3.webp';
-import luxury4 from '../assets/OurProduct/luxury4.webp';
-import luxury5 from '../assets/OurProduct/luxury5.webp';
-import classic1 from '../assets/OurProduct/classic1.webp';
-import classic2 from '../assets/OurProduct/classic2.webp';
-import classic3 from '../assets/OurProduct/classic3.webp';
-import classic4 from '../assets/OurProduct/classic4.webp';
-import classic5 from '../assets/OurProduct/classic5.webp';
+import col1 from '../assets/Our Collection/1.webp';
+import col2 from '../assets/Our Collection/2.webp';
+import col3 from '../assets/Our Collection/3.webp';
+import col4 from '../assets/Our Collection/4.webp';
+import col5 from '../assets/Our Collection/5.webp';
+
+const collections = [
+  {
+    id: 'signature',
+    subtitle: 'Signature Collection',
+    title: 'The Essence of Ceylon.',
+    image: col1,
+    reverse: false,
+    list: [
+      'Gourmet Tea gift box',
+      'Premium Ceylon Black Tea',
+      'Premium Green Tea',
+      'Silver White Tea',
+      'Ceylon Gold OP Tea'
+    ],
+    extras: [
+      {
+        heading: 'Packaging',
+        items: ['Luxury Rigid Box', 'Vintage Sri Lanka Artwork', 'Gold Map Print']
+      }
+    ]
+  },
+  {
+    id: 'wellness',
+    subtitle: 'Wellness Collection',
+    title: 'Tea for Mind, Body & Soul.',
+    image: col2,
+    reverse: true,
+    list: [
+      'Green Tea',
+      'Lemongrass',
+      'Chamomile',
+      'Tealora Blue Tea',
+      'Ginger Tea',
+      'Cinnamon Tea',
+      'Moringa Tea',
+      'Lemon Sour Tea',
+      'Soursop Tea',
+      'Hibiscus Tea'
+    ]
+  },
+  {
+    id: 'discovery',
+    subtitle: 'Discovery Collection',
+    title: 'Discover the Flavors of Ceylon.',
+    image: col3,
+    reverse: false,
+    preText: 'Mini Tea Canisters',
+    list: [
+      'Black Tea',
+      'Green Tea',
+      'White Tea'
+    ],
+    postText: 'Perfect for first-time customers.'
+  },
+  {
+    id: 'royal',
+    subtitle: 'Royal Reserve Collection',
+    title: 'Crafted for the Extraordinary.',
+    image: col4,
+    reverse: true,
+    list: [
+      'Golden Tips',
+      'Silver Tips',
+      'Single Estate Black Tea'
+    ]
+  },
+  {
+    id: 'heritage',
+    subtitle: 'Heritage Collection',
+    title: 'A Journey Through Ceylon Tea Regions.',
+    image: col5,
+    reverse: false,
+    preText: "A refined collection inspired by Sri Lanka's iconic tea-growing regions, bringing together distinct flavours, rich aromas, and generations of tea-making traditions in every cup.",
+    customList: [
+      'Nuwara Eliya – Light, floral, delicate',
+      'Uva – Bright, aromatic, lively',
+      'Dimbula – Smooth, balanced, refreshing',
+      'Kandy – Rich, full-bodied'
+    ]
+  }
+];
 
 const OurProduct = () => {
   return (
@@ -77,458 +149,218 @@ const OurProduct = () => {
         </Typography>
       </Box>
 
-      {/* Signature Collection Section */}
-      <Box 
-        component="section"
-        sx={{
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          py: { xs: 5, md: 10, lg: '100px' }, 
-          px: { xs: 2, sm: 4, lg: 0 },
-          bgcolor: '#ffffff'
-        }}
-      >
+      {/* Collections Mapping */}
+      {collections.map((coll, idx) => (
         <Box 
+          key={coll.id}
+          component="section"
           sx={{
             width: '100%',
-            maxWidth: '1440px',
             display: 'flex',
-            flexDirection: { xs: 'column-reverse', lg: 'row' },
-            alignItems: 'center',
             justifyContent: 'center',
-            gap: { xs: 4, lg: '59px' },
+            py: { xs: 3, md: 5, lg: '50px' }, 
+            px: { xs: 2, sm: 4, lg: 0 },
+            bgcolor: '#ffffff'
           }}
         >
-          {/* Image Area */}
           <Box 
             sx={{
+              width: '100%',
+              maxWidth: '1200px',
               display: 'flex',
-              flexDirection: 'column',
-              gap: '22px',
-              width: { xs: '100%', lg: '587px' },
+              flexDirection: { 
+                xs: 'column', 
+                sm: coll.reverse ? 'row-reverse' : 'row' 
+              },
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: { xs: 4, md: 4, lg: '60px' },
             }}
           >
-            {/* Main Image */}
+            {/* Image Area */}
             <Box 
-              component="img"
-              src={signature1}
-              alt="Signature Collection Main"
               sx={{
-                width: '100%',
-                height: { xs: 'auto', lg: '412px' },
-                borderRadius: '20px',
-                objectFit: 'cover'
+                width: { xs: '100%', sm: '48%', lg: '587px' },
+                display: 'flex',
+                justifyContent: 'center'
               }}
-            />
-            {/* Thumbnails Row */}
+            >
+              <Box 
+                component="img"
+                src={coll.image}
+                alt={coll.title}
+                sx={{
+                  width: '100%',
+                  height: { xs: 'auto', lg: '468px' },
+                  borderRadius: '20px',
+                  objectFit: 'cover'
+                }}
+              />
+            </Box>
+
+            {/* Text Area */}
             <Box 
               sx={{
                 display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
-                gap: '12px',
+                flexDirection: 'column',
+                width: { xs: '100%', sm: '48%', lg: '600px' },
+                textAlign: { xs: 'center', sm: 'left' },
+                alignItems: { xs: 'center', sm: 'flex-start' }
               }}
             >
-              {[signature2, signature3, signature4, signature5].map((imgSrc, index) => (
-                <Box 
-                  key={index}
-                  component="img"
-                  src={imgSrc}
-                  alt={`Signature Collection ${index + 2}`}
+              <Typography 
+                sx={{
+                  fontFamily: 'Poppins, sans-serif',
+                  fontWeight: 600,
+                  fontSize: { xs: '14px', sm: '12px', md: '14px', lg: '16px' },
+                  color: 'rgba(202, 153, 58, 1)',
+                  mb: { xs: 1, sm: 0.5, lg: 1 }
+                }}
+              >
+                {coll.subtitle}
+              </Typography>
+              
+              <Typography 
+                variant="h2"
+                sx={{
+                  fontFamily: 'Poppins, sans-serif',
+                  fontWeight: 700,
+                  fontSize: { xs: '24px', sm: '18px', md: '22px', lg: '32px' },
+                  lineHeight: { xs: '32px', sm: '24px', md: '30px', lg: '40px' },
+                  color: 'rgba(0, 0, 0, 1)',
+                  mb: { xs: 3, sm: 1.5, lg: 3 }
+                }}
+              >
+                {coll.title}
+              </Typography>
+              
+              {coll.preText && (
+                <Typography 
                   sx={{
-                    width: { xs: '22%', lg: '138px' },
-                    height: { xs: 'auto', lg: '135px' },
-                    borderRadius: '20px',
-                    objectFit: 'cover',
-                    cursor: 'pointer',
-                    '&:hover': { opacity: 0.8 },
-                    transition: 'opacity 0.2s'
+                    fontFamily: 'Poppins, sans-serif',
+                    fontWeight: 600,
+                    fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                    color: '#757575',
+                    mb: { xs: 2, sm: 1, lg: 2 }
                   }}
-                />
+                >
+                  {coll.preText}
+                </Typography>
+              )}
+
+              {coll.list && (
+                <Box component="ul" sx={{ paddingLeft: { xs: 0, sm: '20px' }, listStyleType: { xs: 'none', sm: 'disc' }, listStylePosition: { xs: 'inside', sm: 'outside' }, margin: 0, mb: { xs: 3, sm: 1.5, lg: 3 } }}>
+                  {coll.list.map((item, i) => (
+                    <Typography 
+                      component="li" 
+                      key={i}
+                      sx={{
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 400,
+                        fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                        color: '#757575',
+                        mb: { xs: 0.5, sm: 0.25, lg: 0.5 }
+                      }}
+                    >
+                      {item}
+                    </Typography>
+                  ))}
+                </Box>
+              )}
+
+              {coll.customList && (
+                <Box sx={{ mb: { xs: 3, sm: 1.5, lg: 3 } }}>
+                  {coll.customList.map((item, i) => (
+                    <Typography 
+                      key={i}
+                      sx={{
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 400,
+                        fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                        color: '#757575',
+                        mb: { xs: 0.5, sm: 0.25, lg: 0.5 }
+                      }}
+                    >
+                      {item}
+                    </Typography>
+                  ))}
+                </Box>
+              )}
+
+              {coll.extras && coll.extras.map((extra, i) => (
+                <Box key={i} sx={{ mb: { xs: 3, sm: 1.5, lg: 3 } }}>
+                  <Typography 
+                    sx={{
+                      fontFamily: 'Poppins, sans-serif',
+                      fontWeight: 600,
+                      fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                      color: '#000',
+                      mb: { xs: 1, sm: 0.5, lg: 1 }
+                    }}
+                  >
+                    {extra.heading}
+                  </Typography>
+                  <Box component="ul" sx={{ paddingLeft: { xs: 0, sm: '20px' }, listStyleType: { xs: 'none', sm: 'disc' }, listStylePosition: { xs: 'inside', sm: 'outside' }, margin: 0 }}>
+                    {extra.items.map((item, j) => (
+                      <Typography 
+                        component="li" 
+                        key={j}
+                        sx={{
+                          fontFamily: 'Poppins, sans-serif',
+                          fontWeight: 400,
+                          fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                          color: '#757575',
+                          mb: { xs: 0.5, sm: 0.25, lg: 0.5 }
+                        }}
+                      >
+                        {item}
+                      </Typography>
+                    ))}
+                  </Box>
+                </Box>
               ))}
-            </Box>
-          </Box>
 
-          {/* Text Area */}
-          <Box 
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: { xs: '100%', lg: '551px' },
-              textAlign: { xs: 'center', lg: 'left' },
-              alignItems: { xs: 'center', lg: 'flex-start' }
-            }}
-          >
-            <Typography 
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 600,
-                fontSize: { xs: '15px', md: '22px' },
-                lineHeight: '22px',
-                color: 'rgba(202, 153, 58, 1)',
-                mb: '21px'
-              }}
-            >
-              Signature Collection
-            </Typography>
-            
-            <Typography 
-              variant="h2"
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 600,
-                fontSize: { xs: '22px', md: '35px' },
-                lineHeight: { xs: '30px', md: '40px' },
-                color: 'rgba(0, 0, 0, 1)',
-                mb: '36px'
-              }}
-            >
-              Premium Ceylon Tea Gift Collection
-            </Typography>
-            
-            <Typography 
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 400,
-                fontSize: { xs: '15px', md: '18px' },
-                lineHeight: '22px',
-                color: 'rgba(117, 117, 117, 1)',
-                mb: '36px',
-                textAlign: { xs: 'center', lg: 'left' }
-              }}
-            >
-              Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis
-              <br /><br />
-              Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum  Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum
-            </Typography>
-
-            <Button 
-              variant="contained"
-              sx={{
-                width: { xs: '170px', sm: '530px' },
-                height: { xs: '40px', sm: '67px' },
-                bgcolor: 'rgba(202, 153, 58, 1)',
-                borderRadius: { xs: '9px', sm: '10px' },
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 700,
-                fontSize: { xs: '15px', sm: '16px' }, 
-                textTransform: 'uppercase',
-                color: '#fff',
-                boxShadow: 'none',
-                '&:hover': {
-                  bgcolor: 'rgba(180, 130, 40, 1)',
-                  boxShadow: 'none'
-                }
-              }}
-            >
-              BUY NOW
-            </Button>
-          </Box>
-        </Box>
-      </Box>
-
-      {/* Luxury Collection Section */}
-      <Box 
-        component="section"
-        sx={{
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          py: { xs: 3, md: 10, lg: '100px' }, 
-          px: { xs: 2, sm: 4, lg: 0 },
-          bgcolor: '#ffffff'
-        }}
-      >
-        <Box 
-          sx={{
-            width: '100%',
-            maxWidth: '1440px',
-            display: 'flex',
-            flexDirection: { xs: 'column', lg: 'row' },
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: { xs: 4, lg: '59px' },
-          }}
-        >
-          {/* Text Area */}
-          <Box 
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: { xs: '100%', lg: '551px' },
-              textAlign: { xs: 'center', lg: 'left' },
-              alignItems: { xs: 'center', lg: 'flex-start' }
-            }}
-          >
-            <Typography 
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 600,
-                fontSize: { xs: '15px', md: '22px' },
-                lineHeight: '22px',
-                color: 'rgba(202, 153, 58, 1)',
-                mb: '21px'
-              }}
-            >
-              Luxury Collection
-            </Typography>
-            
-            <Typography 
-              variant="h2"
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 600,
-                fontSize: { xs: '22px', md: '35px' },
-                lineHeight: { xs: '30px', md: '40px' },
-                color: 'rgba(0, 0, 0, 1)',
-                mb: '36px'
-              }}
-            >
-              Exclusive Premium Gift Box.
-            </Typography>
-            
-            <Typography 
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 400,
-                fontSize: { xs: '15px', md: '18px' },
-                lineHeight: '22px',
-                color: 'rgba(117, 117, 117, 1)',
-                mb: '36px',
-                textAlign: { xs: 'center', lg: 'left' }
-              }}
-            >
-              Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis
-              <br /><br />
-              Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum  Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum
-            </Typography>
-
-            <Button 
-              variant="contained"
-              sx={{
-                width: { xs: '170px', sm: '530px' },
-                height: { xs: '40px', sm: '67px' },
-                bgcolor: 'rgba(202, 153, 58, 1)',
-                borderRadius: { xs: '9px', sm: '10px' },
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 700,
-                fontSize: { xs: '15px', sm: '16px' }, 
-                textTransform: 'uppercase',
-                color: '#fff',
-                boxShadow: 'none',
-                '&:hover': {
-                  bgcolor: 'rgba(180, 130, 40, 1)',
-                  boxShadow: 'none'
-                }
-              }}
-            >
-              BUY NOW
-            </Button>
-          </Box>
-
-          {/* Image Area */}
-          <Box 
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '22px',
-              width: { xs: '100%', lg: '587px' },
-            }}
-          >
-            {/* Main Image */}
-            <Box 
-              component="img"
-              src={luxury1}
-              alt="Luxury Collection Main"
-              sx={{
-                width: '100%',
-                height: { xs: 'auto', lg: '412px' },
-                borderRadius: '20px',
-                objectFit: 'cover'
-              }}
-            />
-            {/* Thumbnails Row */}
-            <Box 
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
-                gap: '12px',
-              }}
-            >
-              {[luxury2, luxury3, luxury4, luxury5].map((imgSrc, index) => (
-                <Box 
-                  key={index}
-                  component="img"
-                  src={imgSrc}
-                  alt={`Luxury Collection ${index + 2}`}
+              {coll.postText && (
+                <Typography 
                   sx={{
-                    width: { xs: '22%', lg: '138px' },
-                    height: { xs: 'auto', lg: '135px' },
-                    borderRadius: '20px',
-                    objectFit: 'cover',
-                    cursor: 'pointer',
-                    '&:hover': { opacity: 0.8 },
-                    transition: 'opacity 0.2s'
+                    fontFamily: 'Poppins, sans-serif',
+                    fontWeight: 600,
+                    fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                    color: '#000',
+                    mb: { xs: 3, sm: 1.5, lg: 3 }
                   }}
-                />
-              ))}
+                >
+                  {coll.postText}
+                </Typography>
+              )}
+
+              <Button 
+                variant="contained"
+                sx={{
+                  width: { xs: '180px', sm: '150px', md: '180px', lg: '220px' },
+                  height: { xs: '45px', sm: '35px', md: '40px', lg: '50px' },
+                  bgcolor: 'rgba(202, 153, 58, 1)',
+                  borderRadius: '10px',
+                  fontFamily: 'Poppins, sans-serif',
+                  fontWeight: 700,
+                  fontSize: { xs: '14px', sm: '12px', lg: '15px' }, 
+                  textTransform: 'uppercase',
+                  color: '#fff',
+                  boxShadow: 'none',
+                  mt: { xs: 1, sm: 0, lg: 1 },
+                  '&:hover': {
+                    bgcolor: 'rgba(180, 130, 40, 1)',
+                    boxShadow: 'none'
+                  }
+                }}
+              >
+                BUY NOW
+              </Button>
             </Box>
           </Box>
         </Box>
-      </Box>
+      ))}
 
-      {/* Classic Collection Section */}
-      <Box 
-        component="section"
-        sx={{
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          py: { xs: 5, md: 10, lg: '100px' }, 
-          px: { xs: 2, sm: 4, lg: 0 },
-          bgcolor: '#ffffff'
-        }}
-      >
-        <Box 
-          sx={{
-            width: '100%',
-            maxWidth: '1440px',
-            display: 'flex',
-            flexDirection: { xs: 'column-reverse', lg: 'row' },
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: { xs: 4, lg: '130px' },
-          }}
-        >
-          {/* Image Area */}
-          <Box 
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '22px',
-              width: { xs: '100%', lg: '587px' },
-            }}
-          >
-            {/* Main Image */}
-            <Box 
-              component="img"
-              src={classic1}
-              alt="Classic Collection Main"
-              sx={{
-                width: '100%',
-                height: { xs: 'auto', lg: '412px' },
-                borderRadius: '20px',
-                objectFit: 'cover'
-              }}
-            />
-            {/* Thumbnails Row */}
-            <Box 
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
-                gap: '12px',
-              }}
-            >
-              {[classic2, classic3, classic4, classic5].map((imgSrc, index) => (
-                <Box 
-                  key={index}
-                  component="img"
-                  src={imgSrc}
-                  alt={`Classic Collection ${index + 2}`}
-                  sx={{
-                    width: { xs: '22%', lg: '138px' },
-                    height: { xs: 'auto', lg: '135px' },
-                    borderRadius: '20px',
-                    objectFit: 'cover',
-                    cursor: 'pointer',
-                    '&:hover': { opacity: 0.8 },
-                    transition: 'opacity 0.2s'
-                  }}
-                />
-              ))}
-            </Box>
-          </Box>
-
-          {/* Text Area */}
-          <Box 
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: { xs: '100%', lg: '551px' },
-              textAlign: { xs: 'center', lg: 'left' },
-              alignItems: { xs: 'center', lg: 'flex-start' }
-            }}
-          >
-            <Typography 
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 600,
-                fontSize: { xs: '15px', md: '22px' },
-                lineHeight: '22px',
-                color: 'rgba(202, 153, 58, 1)',
-                mb: '21px'
-              }}
-            >
-              Classic Collection
-            </Typography>
-            
-            <Typography 
-              variant="h2"
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 600,
-                fontSize: { xs: '22px', md: '35px' },
-                lineHeight: { xs: '30px', md: '40px' },
-                color: 'rgba(0, 0, 0, 1)',
-                mb: '36px'
-              }}
-            >
-              Elegant Tea Selection Gift Box.
-            </Typography>
-            
-            <Typography 
-              sx={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 400,
-                fontSize: { xs: '15px', md: '18px' },
-                lineHeight: '22px',
-                color: 'rgba(117, 117, 117, 1)',
-                mb: '36px',
-                textAlign: { xs: 'center', lg: 'left' }
-              }}
-            >
-              Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis
-              <br /><br />
-              Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum  Lorem ipsum dolor sit amet consectetur. Urna erat non sapien sagittis convallis nibh cursus varius Lorem ipsum
-            </Typography>
-
-            <Button 
-              variant="contained"
-              sx={{
-                width: { xs: '170px', sm: '530px' },
-                height: { xs: '40px', sm: '67px' },
-                bgcolor: 'rgba(202, 153, 58, 1)',
-                borderRadius: { xs: '9px', sm: '10px' },
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 700,
-                fontSize: { xs: '15px', sm: '16px' }, 
-                textTransform: 'uppercase',
-                color: '#fff',
-                boxShadow: 'none',
-                '&:hover': {
-                  bgcolor: 'rgba(180, 130, 40, 1)',
-                  boxShadow: 'none'
-                }
-              }}
-            >
-              BUY NOW
-            </Button>
-          </Box>
-        </Box>
-      </Box>
     </Box>
   );
 };

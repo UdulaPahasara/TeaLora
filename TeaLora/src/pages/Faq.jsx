@@ -8,28 +8,60 @@ import faqHero from '../assets/FAQ/faqHero.webp';
 
 const faqs = [
   {
-    question: "What types of tea does Tealora Ceylon offer?",
-    answer: "We offer a premium range of authentic Ceylon teas, including Black Tea, Green Tea, White Tea, Cinnamon Tea, Ginger Tea, Moringa Tea, and carefully curated luxury gift collections."
+    question: "What makes Tealora Ceylon tea special?",
+    answer: "Tealora Ceylon offers carefully selected premium teas sourced from Sri Lanka's renowned tea-growing regions, delivering exceptional flavour, freshness, and quality."
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur.",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    question: "Where is your tea sourced from?",
+    answer: "Our teas are ethically sourced from selected in Hill country Sri Lanka"
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur.",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    question: "Are your teas 100% natural?",
+    answer: "Yes. Our teas are made using carefully selected natural ingredients with no artificial colours or flavours."
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur.",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    question: "Do your teas contain caffeine?",
+    answer: "Our black, green, and white teas naturally contain caffeine. Most herbal infusions are naturally caffeine-free."
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur.",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    question: "How should I brew your tea?",
+    answer: "Brewing instructions are printed on every package to ensure the perfect cup."
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur.",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    question: "Do you ship internationally?",
+    answer: "Yes. We provide international shipping to selected countries. Shipping availability depends on your location."
+  },
+  {
+    question: "Can I order customized corporate gift boxes?",
+    answer: "Absolutely. We offer personalized corporate gift solutions with custom branding for businesses and special events."
+  },
+  {
+    question: "How should I store my tea?",
+    answer: "Store your tea in a cool, dry place away from direct sunlight and strong odours to preserve freshness."
+  },
+  {
+    question: "Are your products suitable as gifts?",
+    answer: "Yes. Every Tealora gift collection is elegantly packaged to create a memorable gifting experience."
+  },
+  {
+    question: "How can I contact Tealora Ceylon?",
+    answer: "You can reach us through our Contact page, email, or social media channels. Our team is happy to assist you."
+  },
+  {
+    question: "Do you accept bulk or wholesale orders?",
+    answer: "Yes. We welcome wholesale, retail, hotel, café, and export inquiries."
+  },
+  {
+    question: "Do you offer private label or OEM services?",
+    answer: "Yes. We offer private label solutions for selected international partners."
+  },
+  {
+    question: "Do you provide export documentation?",
+    answer: "Yes. We provide the necessary export documentation according to destination country requirements."
+  },
+  {
+    question: "Is your packaging eco-friendly?",
+    answer: "We are committed to using high-quality, sustainable packaging materials whenever possible."
   }
 ];
 

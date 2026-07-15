@@ -3,15 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import Seo from '../components/Common/Seo';
 import homeHero from '../assets/Home/HomeHero.webp';
 import homePurposeImg from '../assets/Home/HomePurposeImg.webp';
 import homeGlobalMap from '../assets/Home/HomeGlobalMap.webp';
 import homeWhyUsImg from '../assets/Home/HomeWhyUsImg.webp';
 import homeAbout from '../assets/Home/HomeAboutImg.webp';
-import homeDis1 from '../assets/Home/HomeDis1.webp';
-import homeDis2 from '../assets/Home/HomeDis2.webp';
-import homeDis3 from '../assets/Home/HomeDis3.webp';
+import col1 from '../assets/Our Collection/1.webp';
+import col2 from '../assets/Our Collection/2.webp';
+import col3 from '../assets/Our Collection/3.webp';
+import col4 from '../assets/Our Collection/4.webp';
+import col5 from '../assets/Our Collection/5.webp';
 
 const Home = () => {
   const [showVision, setShowVision] = useState(true);
@@ -255,7 +261,11 @@ const Home = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          bgcolor: '#FFFDF7', 
+          justifyContent: 'center',
+          bgcolor: 'rgba(255, 246, 232, 1)', 
+          height: { lg: 'auto' },
+          minHeight: { lg: '626px' },
+          py: { xs: 5, md: 8, lg: 8 },
           px: { xs: 2, sm: 4, lg: 0 }
         }}
       >
@@ -263,11 +273,11 @@ const Home = () => {
           sx={{
             fontFamily: 'Poppins, sans-serif',
             fontWeight: 600,
-           fontSize: { xs: '15px', md: '22px',lg: '20px' },
+            fontSize: '16px',
             lineHeight: '22px',
             color: 'rgba(202, 153, 58, 1)',
             textAlign: 'center',
-            mb: 1
+            mb: '12px'
           }}
         >
           Our Collections
@@ -278,41 +288,55 @@ const Home = () => {
           sx={{
             fontFamily: 'Poppins, sans-serif',
             fontWeight: 600,
-            fontSize: { xs: '22px', md: '25px' },
+            fontSize: '25px',
             lineHeight: '30px',
             color: 'rgba(0, 0, 0, 1)',
             textAlign: 'center',
-            mb: { xs: 2, md: 6 }
+            mb: { xs: 4, lg: '49px' }
           }}
         >
           Discover Our Premium Tea Range
         </Typography>
 
+        {/* Desktop Carousel */}
         <Box 
           sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            justifyContent: 'center',
+            display: { xs: 'none', sm: 'flex' },
+            justifyContent: 'flex-start',
             alignItems: 'center',
-            gap: { xs: 2, sm: 2, lg: '30px' },
+            gap: '20px',
+            flexWrap: 'nowrap',
             width: '100%',
-            maxWidth: '1440px',
-            px: { xs: 0, sm: 2, lg: 0 }
-
+            overflowX: 'auto',
+            pl: { xs: 2, sm: 4, md: '60px', lg: 'max(119px, calc((100vw - 1440px) / 2 + 119px))' },
+            pr: { xs: 2, sm: 4, lg: '20px' },
+            pb: 2,
+            /* Hide scrollbar */
+            '&::-webkit-scrollbar': { display: 'none' },
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
           }}
         >
           {[
-            { img: homeDis1, label: 'Ceylon Cinnamon Tea' },
-            { img: homeDis2, label: 'Ceylon Black Tea' },
-            { img: homeDis3, label: 'Ceylon Earl Grey Tea' }
+            { img: col1, label: 'Signature Collection' },
+            { img: col2, label: 'Wellness Collection' },
+            { img: col3, label: 'Discovery Collection' },
+            { img: col4, label: 'Premium Collection' },
+            { img: col5, label: 'Luxury Collection' }
           ].map((item, index) => (
             <Box 
               key={index}
               sx={{
                 position: 'relative',
-                width: { xs: '100%', sm: '31%', lg: '387px' },
-                display: 'flex',
-                justifyContent: 'center'
+                flex: '0 0 auto',
+                width: '387px',
+                height: '386px',
+                borderRadius: '15px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                '&:hover .overlay': {
+                  bgcolor: 'rgba(0, 0, 0, 0.4)'
+                }
               }}
             >
               <Box 
@@ -321,17 +345,30 @@ const Home = () => {
                 alt={item.label}
                 sx={{
                   width: '100%',
-                  height: { xs: 'auto', sm: '200px', md: '300px', lg: '386px' },
-                  borderRadius: '15px',
+                  height: '100%',
                   objectFit: 'cover'
+                }}
+              />
+              <Box 
+                className="overlay"
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  bgcolor: 'rgba(0, 0, 0, 0.3)',
+                  transition: 'background-color 0.3s ease',
+                  zIndex: 1
                 }}
               />
               <Box 
                 sx={{
                   position: 'absolute',
-                  bottom: { xs: '15px', lg: '25px' }, 
+                  bottom: '25px', 
+                  left: '50%',
+                  transform: 'translateX(-50%)',
                   width: '295px',
-                  maxWidth: '90%', 
                   height: '43px',
                   bgcolor: 'rgba(202, 153, 58, 1)',
                   borderRadius: '12px',
@@ -343,7 +380,7 @@ const Home = () => {
                   fontWeight: 600,
                   fontSize: '14px',
                   textAlign: 'center',
-                  cursor: 'pointer',
+                  zIndex: 2,
                   transition: 'background-color 0.3s ease',
                   '&:hover': {
                     bgcolor: 'rgba(180, 130, 40, 1)'
@@ -354,6 +391,99 @@ const Home = () => {
               </Box>
             </Box>
           ))}
+        </Box>
+
+        {/* Mobile Swiper */}
+        <Box 
+          sx={{
+            width: '100%',
+            display: { xs: 'block', sm: 'none' },
+            '& .swiper-pagination-bullet-active': {
+              backgroundColor: 'rgba(202, 153, 58, 1)'
+            },
+            '& .swiper-slide': {
+              display: 'flex',
+              justifyContent: 'center'
+            }
+          }}
+        >
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            style={{ paddingBottom: '40px' }}
+          >
+            {[
+              { img: col1, label: 'Signature Collection' },
+              { img: col2, label: 'Wellness Collection' },
+              { img: col3, label: 'Discovery Collection' },
+              { img: col4, label: 'Premium Collection' },
+              { img: col5, label: 'Luxury Collection' }
+            ].map((item, index) => (
+              <SwiperSlide key={index}>
+                <Box 
+                  sx={{
+                    position: 'relative',
+                    width: '100%',
+                    maxWidth: { xs: '250px', sm: '300px' },
+                    height: { xs: '250px', sm: '300px' },
+                    borderRadius: '15px',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <Box 
+                    component="img"
+                    src={item.img}
+                    alt={item.label}
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                  />
+                  <Box 
+                    className="overlay"
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      bgcolor: 'rgba(0, 0, 0, 0.3)',
+                      transition: 'background-color 0.3s ease',
+                      zIndex: 1
+                    }}
+                  />
+                  <Box 
+                    sx={{
+                      position: 'absolute',
+                      bottom: '25px', 
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: { xs: '220px', sm: '260px' },
+                      maxWidth: '90%',
+                      height: { xs: '35px', sm: '43px' },
+                      bgcolor: 'rgba(202, 153, 58, 1)',
+                      borderRadius: '12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#fff',
+                      fontFamily: 'Poppins, sans-serif',
+                      fontWeight: 600,
+                      fontSize: { xs: '12px', sm: '14px' },
+                      textAlign: 'center',
+                      zIndex: 2
+                    }}
+                  >
+                    {item.label}
+                  </Box>
+                </Box>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </Box>
       </Box>
 
