@@ -17,9 +17,9 @@ const ContactUs = () => {
   
   const { control, handleSubmit, reset, formState: { errors } } = useForm({
     defaultValues: {
-      from_name: '',
+      name: '',
       contact_number: '',
-      reply_to: '',
+      email: '',
       message: ''
     }
   });
@@ -257,7 +257,7 @@ const ContactUs = () => {
             }}
           >
             <Controller
-              name="from_name"
+              name="name"
               control={control}
               rules={{ required: 'Name is required' }}
               render={({ field }) => (
@@ -266,8 +266,8 @@ const ContactUs = () => {
                   label="Your Name" 
                   variant="standard" 
                   fullWidth
-                  error={!!errors.from_name}
-                  helperText={errors.from_name?.message}
+                  error={!!errors.name}
+                  helperText={errors.name?.message}
                   sx={{
                     '& .MuiInputBase-root': { 
                       fontFamily: 'Poppins, sans-serif', 
@@ -315,7 +315,7 @@ const ContactUs = () => {
             />
 
             <Controller
-              name="reply_to"
+              name="email"
               control={control}
               rules={{ 
                 required: 'Email is required',
@@ -331,8 +331,8 @@ const ContactUs = () => {
                   label="Email Address" 
                   variant="standard" 
                   fullWidth
-                  error={!!errors.reply_to}
-                  helperText={errors.reply_to?.message}
+                  error={!!errors.email}
+                  helperText={errors.email?.message}
                   sx={{
                     '& .MuiInputBase-root': { 
                       fontFamily: 'Poppins, sans-serif', 

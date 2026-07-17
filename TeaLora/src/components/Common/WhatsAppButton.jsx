@@ -1,0 +1,65 @@
+import React, { useState } from 'react';
+import { Box, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import whatsappIcon from '../../assets/Home/whatsapp.webp';
+
+const WhatsAppButton = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  if (!isVisible) return null;
+
+  return (
+    <Box
+      sx={{
+        position: 'fixed',
+        bottom: { xs: '10px', sm: '50px', lg: '45px' },
+        right: { xs: '-7px', sm: '-8px', lg: '-25px' },
+        zIndex: 9999,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+      }}
+    >
+      <IconButton
+        onClick={() => setIsVisible(false)}
+        sx={{
+          bgcolor: '#fff',
+          width: '24px',
+          height: '24px',
+          mb: { xs: -2.5, sm: -3, lg: -4 },
+          mr: { xs: 1, sm: 2.5, lg: 4.5 },
+          boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+          
+        }}
+      >
+        <CloseIcon sx={{ fontSize: '14px', color: '#333' }} />
+      </IconButton>
+      <Box
+        component="a"
+        href="https://wa.me/94714436642"
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          width: { xs: '60px', sm: '70px', lg: '83.66px' },
+          height: { xs: '60px', sm: '70px', lg: '83.66px' },
+          display: 'block',
+          cursor: 'pointer',
+          
+        }}
+      >
+        <Box
+          component="img"
+          src={whatsappIcon}
+          alt="WhatsApp"
+          sx={{
+            width: '40px',
+            height: '100%',
+            objectFit: 'contain',
+          }}
+        />
+      </Box>
+    </Box>
+  );
+};
+
+export default WhatsAppButton;

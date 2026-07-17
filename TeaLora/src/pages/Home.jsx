@@ -18,6 +18,7 @@ import col2 from '../assets/Our Collection/2.webp';
 import col3 from '../assets/Our Collection/3.webp';
 import col4 from '../assets/Our Collection/4.webp';
 import col5 from '../assets/Our Collection/5.webp';
+import col6 from '../assets/Our Collection/6.webp';
 
 const Home = () => {
   const [showVision, setShowVision] = useState(true);
@@ -318,19 +319,21 @@ const Home = () => {
           }}
         >
           {[
-            { img: col1, label: 'Signature Collection' },
-            { img: col2, label: 'Wellness Collection' },
-            { img: col3, label: 'Discovery Collection' },
-            { img: col4, label: 'Premium Collection' },
-            { img: col5, label: 'Luxury Collection' }
+            { img: col1, label: 'Signature Collection', id: 'signature' },
+            { img: col2, label: 'Wellness Collection', id: 'wellness' },
+            { img: col3, label: 'Discovery Collection', id: 'discovery' },
+            { img: col4, label: 'Premium Collection', id: 'royal' },
+            { img: col5, label: 'Luxury Collection', id: 'heritage' },
+            { img: col6, label: 'Mini Gift Collection', id: 'mini' }
           ].map((item, index) => (
             <Box 
               key={index}
+              onClick={() => navigate('/products#' + item.id)}
               sx={{
                 position: 'relative',
                 flex: '0 0 auto',
-                width: '387px',
-                height: '386px',
+                width: { sm: '260px', md: '250px', lg: '357px' },
+                height: { sm: '260px', md: '280px', lg: '320px' },
                 borderRadius: '15px',
                 overflow: 'hidden',
                 cursor: 'pointer',
@@ -416,21 +419,24 @@ const Home = () => {
             style={{ paddingBottom: '40px' }}
           >
             {[
-              { img: col1, label: 'Signature Collection' },
-              { img: col2, label: 'Wellness Collection' },
-              { img: col3, label: 'Discovery Collection' },
-              { img: col4, label: 'Premium Collection' },
-              { img: col5, label: 'Luxury Collection' }
+              { img: col1, label: 'Signature Collection', id: 'signature' },
+              { img: col2, label: 'Wellness Collection', id: 'wellness' },
+              { img: col3, label: 'Discovery Collection', id: 'discovery' },
+              { img: col4, label: 'Premium Collection', id: 'royal' },
+              { img: col5, label: 'Luxury Collection', id: 'heritage' },
+              { img: col6, label: 'Mini Gift Collection', id: 'mini' }
             ].map((item, index) => (
               <SwiperSlide key={index}>
                 <Box 
+                  onClick={() => navigate('/products#' + item.id)}
                   sx={{
                     position: 'relative',
                     width: '100%',
                     maxWidth: { xs: '250px', sm: '300px' },
                     height: { xs: '250px', sm: '300px' },
                     borderRadius: '15px',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    cursor: 'pointer'
                   }}
                 >
                   <Box 
@@ -726,13 +732,13 @@ const Home = () => {
                       width: '36px',
                       height: '36px',
                       borderRadius: '50%',
-                      bgcolor: showVision ? 'rgba(202, 153, 58, 1)' : 'transparent',
-                      border: showVision ? 'none' : '1px solid #fff',
+                      bgcolor: !showVision ? 'rgba(202, 153, 58, 1)' : 'transparent',
+                      border: !showVision ? 'none' : '1px solid #fff',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       cursor: 'pointer',
-                      '&:hover': { bgcolor: showVision ? 'rgba(180, 130, 40, 1)' : 'rgba(255,255,255,0.1)' },
+                      '&:hover': { bgcolor: !showVision ? 'rgba(180, 130, 40, 1)' : 'rgba(255,255,255,0.1)' },
                       transition: 'all 0.3s ease'
                     }}
                   >
@@ -744,13 +750,13 @@ const Home = () => {
                       width: '36px',
                       height: '36px',
                       borderRadius: '50%',
-                      bgcolor: !showVision ? 'rgba(202, 153, 58, 1)' : 'transparent',
-                      border: !showVision ? 'none' : '1px solid #fff',
+                      bgcolor: showVision ? 'rgba(202, 153, 58, 1)' : 'transparent',
+                      border: showVision ? 'none' : '1px solid #fff',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       cursor: 'pointer',
-                      '&:hover': { bgcolor: !showVision ? 'rgba(180, 130, 40, 1)' : 'rgba(255,255,255,0.1)' },
+                      '&:hover': { bgcolor: showVision ? 'rgba(180, 130, 40, 1)' : 'rgba(255,255,255,0.1)' },
                       transition: 'all 0.3s ease'
                     }}
                   >

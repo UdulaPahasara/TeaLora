@@ -7,6 +7,9 @@ import col2 from '../assets/Our Collection/2.webp';
 import col3 from '../assets/Our Collection/3.webp';
 import col4 from '../assets/Our Collection/4.webp';
 import col5 from '../assets/Our Collection/5.webp';
+import col6 from '../assets/Our Collection/6.webp';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const collections = [
   {
@@ -87,10 +90,38 @@ const collections = [
       'Dimbula – Smooth, balanced, refreshing',
       'Kandy – Rich, full-bodied'
     ]
+  },
+  {
+    id: 'mini',
+    subtitle: 'Mini Gift Collection',
+    title: 'A Thoughtful Gift, Perfectly Packed.',
+    image: col6,
+    reverse: true,
+    list: [
+      'Premium Ceylon Tea',
+      'Gourmet Cashew Delight',
+      'Elegant Gift Packaging'
+    ]
   }
 ];
 
 const OurProduct = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        // Adding a slight delay to ensure layout is complete
+        setTimeout(() => {
+          const y = element.getBoundingClientRect().top + window.scrollY - 100; // 100px offset for navbar
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <Box 
       sx={{
@@ -153,6 +184,7 @@ const OurProduct = () => {
       {collections.map((coll, idx) => (
         <Box 
           key={coll.id}
+          id={coll.id}
           component="section"
           sx={{
             width: '100%',
@@ -172,17 +204,18 @@ const OurProduct = () => {
                 xs: 'column', 
                 sm: coll.reverse ? 'row-reverse' : 'row' 
               },
-              alignItems: 'center',
+              alignItems: { xs: 'flex-start', sm: 'stretch' },
               justifyContent: 'space-between',
-              gap: { xs: 4, md: 4, lg: '60px' },
+              gap: { xs: 3, sm: 3, md: '32px', lg: '60px' },
             }}
           >
             {/* Image Area */}
             <Box 
               sx={{
-                width: { xs: '100%', sm: '48%', lg: '587px' },
-                display: 'flex',
-                justifyContent: 'center'
+                width: { xs: '100%', sm: '46%', md: '46%', lg: '490px' },
+                flexShrink: 0,
+                borderRadius: '20px',
+                overflow: 'hidden',
               }}
             >
               <Box 
@@ -191,30 +224,37 @@ const OurProduct = () => {
                 alt={coll.title}
                 sx={{
                   width: '100%',
-                  height: { xs: 'auto', lg: '468px' },
+                  display: 'block',
+                  height: { xs: 'auto', sm: '100%', md: '100%', lg: '400px' },
+                  minHeight: { xs: '220px', sm: '240px', md: '340px' },
                   borderRadius: '20px',
                   objectFit: 'cover'
                 }}
               />
             </Box>
 
+
             {/* Text Area */}
             <Box 
               sx={{
+                flex: 1,
                 display: 'flex',
                 flexDirection: 'column',
-                width: { xs: '100%', sm: '48%', lg: '600px' },
+                width: { xs: '100%', sm: 'auto' },
+                height: { lg: '400px' },
                 textAlign: { xs: 'center', sm: 'left' },
-                alignItems: { xs: 'center', sm: 'flex-start' }
+                alignItems: { xs: 'center', sm: 'flex-start' },
+                justifyContent: 'center',
+                overflow: { xs: 'visible', sm: 'visible', md: 'visible', lg: 'hidden' },
               }}
             >
               <Typography 
                 sx={{
                   fontFamily: 'Poppins, sans-serif',
                   fontWeight: 600,
-                  fontSize: { xs: '14px', sm: '12px', md: '14px', lg: '16px' },
+                  fontSize: { xs: '14px', sm: '12px', md: '14px', lg: '13px' },
                   color: 'rgba(202, 153, 58, 1)',
-                  mb: { xs: 1, sm: 0.5, lg: 1 }
+                  mb: { xs: 1, sm: 0.5, lg: 0.5 }
                 }}
               >
                 {coll.subtitle}
@@ -225,10 +265,10 @@ const OurProduct = () => {
                 sx={{
                   fontFamily: 'Poppins, sans-serif',
                   fontWeight: 700,
-                  fontSize: { xs: '24px', sm: '18px', md: '22px', lg: '32px' },
-                  lineHeight: { xs: '32px', sm: '24px', md: '30px', lg: '40px' },
+                  fontSize: { xs: '24px', sm: '18px', md: '22px', lg: '24px' },
+                  lineHeight: { xs: '32px', sm: '24px', md: '30px', lg: '44px' },
                   color: 'rgba(0, 0, 0, 1)',
-                  mb: { xs: 3, sm: 1.5, lg: 3 }
+                  mb: { xs: 2, sm: 1.5, lg: 0.5 }
                 }}
               >
                 {coll.title}
@@ -239,9 +279,9 @@ const OurProduct = () => {
                   sx={{
                     fontFamily: 'Poppins, sans-serif',
                     fontWeight: 600,
-                    fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                    fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '18px' },
                     color: '#757575',
-                    mb: { xs: 2, sm: 1, lg: 2 }
+                    mb: { xs: 1.5, sm: 1, lg: 4 }
                   }}
                 >
                   {coll.preText}
@@ -249,7 +289,7 @@ const OurProduct = () => {
               )}
 
               {coll.list && (
-                <Box component="ul" sx={{ paddingLeft: { xs: 0, sm: '20px' }, listStyleType: { xs: 'none', sm: 'disc' }, listStylePosition: { xs: 'inside', sm: 'outside' }, margin: 0, mb: { xs: 3, sm: 1.5, lg: 3 } }}>
+                <Box component="ul" sx={{ paddingLeft: { xs: 0, sm: '20px' }, listStyleType: { xs: 'none', sm: 'disc' }, listStylePosition: { xs: 'inside', sm: 'outside' }, margin: 0, mb: { xs: 2, sm: 1.5, lg: 1.5 } }}>
                   {coll.list.map((item, i) => (
                     <Typography 
                       component="li" 
@@ -257,9 +297,10 @@ const OurProduct = () => {
                       sx={{
                         fontFamily: 'Poppins, sans-serif',
                         fontWeight: 400,
-                        fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                        fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '12px' },
                         color: '#757575',
-                        mb: { xs: 0.5, sm: 0.25, lg: 0.5 }
+                        lineHeight: { lg: '18px' },
+                        mb: { xs: 0.4, sm: 0.25, lg: 0.3 }
                       }}
                     >
                       {item}
@@ -269,16 +310,17 @@ const OurProduct = () => {
               )}
 
               {coll.customList && (
-                <Box sx={{ mb: { xs: 3, sm: 1.5, lg: 3 } }}>
+                <Box sx={{ mb: { xs: 2, sm: 1.5, lg: 1.5 } }}>
                   {coll.customList.map((item, i) => (
                     <Typography 
                       key={i}
                       sx={{
                         fontFamily: 'Poppins, sans-serif',
                         fontWeight: 400,
-                        fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                        fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '12px' },
                         color: '#757575',
-                        mb: { xs: 0.5, sm: 0.25, lg: 0.5 }
+                        lineHeight: { lg: '18px' },
+                        mb: { xs: 0.4, sm: 0.25, lg: 0.3 }
                       }}
                     >
                       {item}
@@ -288,14 +330,14 @@ const OurProduct = () => {
               )}
 
               {coll.extras && coll.extras.map((extra, i) => (
-                <Box key={i} sx={{ mb: { xs: 3, sm: 1.5, lg: 3 } }}>
+                <Box key={i} sx={{ mb: { xs: 2, sm: 1.5, lg: 1.5 } }}>
                   <Typography 
                     sx={{
                       fontFamily: 'Poppins, sans-serif',
                       fontWeight: 600,
-                      fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                      fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '13px' },
                       color: '#000',
-                      mb: { xs: 1, sm: 0.5, lg: 1 }
+                      mb: { xs: 0.75, sm: 0.5, lg: 0.95 }
                     }}
                   >
                     {extra.heading}
@@ -308,9 +350,10 @@ const OurProduct = () => {
                         sx={{
                           fontFamily: 'Poppins, sans-serif',
                           fontWeight: 400,
-                          fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                          fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '12px' },
                           color: '#757575',
-                          mb: { xs: 0.5, sm: 0.25, lg: 0.5 }
+                          lineHeight: { lg: '18px' },
+                          mb: { xs: 0.4, sm: 0.25, lg: 0.5 }
                         }}
                       >
                         {item}
@@ -325,9 +368,9 @@ const OurProduct = () => {
                   sx={{
                     fontFamily: 'Poppins, sans-serif',
                     fontWeight: 600,
-                    fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '15px' },
+                    fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '12px' },
                     color: '#000',
-                    mb: { xs: 3, sm: 1.5, lg: 3 }
+                    mb: { xs: 2, sm: 1.5, lg: 1.5 }
                   }}
                 >
                   {coll.postText}
@@ -336,9 +379,14 @@ const OurProduct = () => {
 
               <Button 
                 variant="contained"
+                onClick={() => {
+                  const message = encodeURIComponent(`Hi, I'm interested in ${coll.subtitle}. Could you please provide me the price and more details?`);
+                  window.open(`https://wa.me/94714436642?text=${message}`, '_blank');
+                }}
                 sx={{
-                  width: { xs: '180px', sm: '150px', md: '180px', lg: '220px' },
-                  height: { xs: '45px', sm: '35px', md: '40px', lg: '50px' },
+                  width: { xs: '180px', sm: '100%', md: '100%', lg: '100%' },
+                  height: { xs: '45px', sm: '46px', md: '48px', lg: '50px' },
+                  flexShrink: 0,
                   bgcolor: 'rgba(202, 153, 58, 1)',
                   borderRadius: '10px',
                   fontFamily: 'Poppins, sans-serif',
@@ -347,7 +395,7 @@ const OurProduct = () => {
                   textTransform: 'uppercase',
                   color: '#fff',
                   boxShadow: 'none',
-                  mt: { xs: 1, sm: 0, lg: 1 },
+                  mt: { xs: 2, sm: 2, lg: 3,md:0.5 },
                   '&:hover': {
                     bgcolor: 'rgba(180, 130, 40, 1)',
                     boxShadow: 'none'

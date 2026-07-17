@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/Common/NavBar';
 import Footer from './components/Common/Footer';
+import ScrollToTop from './components/Common/ScrollToTop';
+import WhatsAppButton from './components/Common/WhatsAppButton';
 import './App.css';
 
 // Pages
@@ -14,6 +16,8 @@ import Sustainability from './pages/Sustainability';
 function App() {
   return (
     <>
+      <ScrollToTop />
+      <WhatsAppButton />
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
