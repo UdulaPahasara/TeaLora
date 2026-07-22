@@ -230,7 +230,7 @@ const ContactUs = () => {
                 </IconButton>
                 <IconButton 
                   component="a" 
-                  href="https://wa.me/94714436642" 
+                  href="https://wa.me/94707372773" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   sx={{ p: 0, '&:hover': { opacity: 0.8 } }}
@@ -435,7 +435,7 @@ const ContactUs = () => {
               </IconButton>
               <IconButton 
                 component="a" 
-                href="https://wa.me/94714436642" 
+                href="https://wa.me/94707372773" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 sx={{ p: 0, '&:hover': { opacity: 0.8 } }}
@@ -501,7 +501,7 @@ const ContactUs = () => {
             maxWidth: '304px'
           }}
         >
-          Customer Care: +94 71 443 6642<br />
+          Customer Care: 0707372773<br />
           Email: info@tealoraceylon.com
         </Typography>
       </Box>

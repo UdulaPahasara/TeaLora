@@ -36,7 +36,7 @@ const WhatsAppButton = () => {
       </IconButton>
       <Box
         component="a"
-        href="https://wa.me/94714436642"
+        href="https://wa.me/94707372773"
         target="_blank"
         rel="noopener noreferrer"
         sx={{

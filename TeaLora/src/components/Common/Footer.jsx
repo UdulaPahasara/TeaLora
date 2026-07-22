@@ -64,7 +64,7 @@ const Footer = () => {
             {[
               { icon: fbIcon, link: 'https://www.facebook.com/' },
               { icon: instaIcon, link: 'https://www.instagram.com/' },
-              { icon: whatsappIcon, link: 'https://wa.me/94714436642' }
+              { icon: whatsappIcon, link: 'https://wa.me/94707372773' }
             ].map((social, index) => (
               <IconButton 
                 key={index}
@@ -160,12 +160,12 @@ const Footer = () => {
           {/* Phone */}
           <Box 
             component="a"
-            href="tel:+94714436642"
+            href="tel:0707372773"
             sx={{ display: 'flex', gap: 2, alignItems: 'center', textDecoration: 'none', '&:hover .MuiTypography-root': { color: '#ffffff' } }}
           >
             <Box component="img" src={callIcon} alt="Phone" sx={{ width: '20px', height: '20px' }} />
             <Typography sx={{ fontFamily: 'Poppins, sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: '24.07px', color: 'rgba(255, 255, 255, 0.7)', transition: 'color 0.3s ease' }}>
-              +94714436642
+              0707372773
             </Typography>
           </Box>
 

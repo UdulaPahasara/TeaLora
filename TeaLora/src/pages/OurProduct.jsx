@@ -381,7 +381,7 @@ const OurProduct = () => {
                 variant="contained"
                 onClick={() => {
                   const message = encodeURIComponent(`Hi, I'm interested in ${coll.subtitle}. Could you please provide me the price and more details?`);
-                  window.open(`https://wa.me/94714436642?text=${message}`, '_blank');
+                  window.open(`https://wa.me/94707372773?text=${message}`, '_blank');
                 }}
                 sx={{
                   width: { xs: '180px', sm: '100%', md: '100%', lg: '100%' },
