@@ -62,7 +62,7 @@ const Footer = () => {
           {/* Social Icons */}
           <Box sx={{ display: 'flex', gap: 2, mt: 1 }}>
             {[
-              { icon: fbIcon, link: 'https://www.facebook.com/' },
+              { icon: fbIcon, link: 'https://www.facebook.com/share/17wjN5QSPX/' },
               { icon: instaIcon, link: 'https://www.instagram.com/' },
               { icon: whatsappIcon, link: 'https://wa.me/94707372773' }
             ].map((social, index) => (

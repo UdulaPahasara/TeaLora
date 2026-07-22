@@ -212,7 +212,7 @@ const ContactUs = () => {
               <Box sx={{ display: 'flex', gap: '22px' }}>
                 <IconButton 
                   component="a" 
-                  href="https://www.facebook.com/" 
+                  href="https://www.facebook.com/share/17wjN5QSPX/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   sx={{ p: 0, '&:hover': { opacity: 0.8 } }}
@@ -417,7 +417,7 @@ const ContactUs = () => {
             <Box sx={{ display: 'flex', gap: '22px' }}>
               <IconButton 
                 component="a" 
-                href="https://www.facebook.com/" 
+                href="https://www.facebook.com/share/17wjN5QSPX/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 sx={{ p: 0, '&:hover': { opacity: 0.8 } }}

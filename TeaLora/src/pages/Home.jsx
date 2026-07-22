@@ -42,8 +42,8 @@ const Home = () => {
           backgroundPosition: { xs: '0% center', sm: '15% center', md: '20% center', lg: 'center' },
           backgroundRepeat: 'no-repeat',
           display: 'flex',
-          alignItems: 'center', // Centers vertically
-          justifyContent: 'center', // Centers horizontally to constrain max-width
+          alignItems: 'center', 
+          justifyContent: 'center', 
           overflow: 'hidden'
         }}
       >
@@ -70,7 +70,7 @@ const Home = () => {
               sx={{
                 fontFamily: 'Poppins, sans-serif',
                 fontWeight: 800,
-                fontSize: { xs: '22.47px', sm: '30px', md: '33px', lg: '35px' },
+                fontSize: { xs: '20px', sm: '30px', md: '33px', lg: '33px' },
                 lineHeight: { xs: '31.09px', sm: '42px', md: '48px', lg: '54px' },
                 textTransform: 'uppercase',
                 color: { xs: '#fff', sm: '#000' },
@@ -79,7 +79,7 @@ const Home = () => {
               Authentic Ceylon Tea 
               <Box component="br" sx={{ display: { xs: 'none', sm: 'block' } }} />
               {' '}& Elegant
-              <Box component="span" sx={{ color: { xs: '#fff', sm: 'rgba(202, 153, 58, 1)' } }}>{" "}Gift Collections</Box>
+              <Box component="span" sx={{ color: 'rgba(202, 153, 58, 1)' }}>{" "}Gift Collections</Box>
             </Typography>
           </Box>
 
