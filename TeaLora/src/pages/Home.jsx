@@ -78,8 +78,8 @@ const Home = () => {
             >
               Authentic Ceylon Tea 
               <Box component="br" sx={{ display: { xs: 'none', sm: 'block' } }} />
-              {' '}Crafted
-              <Box component="span" sx={{ color: { xs: '#fff', sm: 'rgba(202, 153, 58, 1)' } }}>{" "}For The World</Box>
+              {' '}& Elegant
+              <Box component="span" sx={{ color: { xs: '#fff', sm: 'rgba(202, 153, 58, 1)' } }}>{" "}Gift Collections</Box>
             </Typography>
           </Box>
 
