@@ -70,15 +70,15 @@ const Home = () => {
               sx={{
                 fontFamily: 'Poppins, sans-serif',
                 fontWeight: 800,
-                fontSize: { xs: '20px', sm: '30px', md: '33px', lg: '33px' },
+                fontSize: { xs: '19.5px', sm: '30px', md: '33px', lg: '33px' },
                 lineHeight: { xs: '31.09px', sm: '42px', md: '48px', lg: '54px' },
                 textTransform: 'uppercase',
                 color: { xs: '#fff', sm: '#000' },
               }}
             >
-              Authentic Ceylon Tea 
+              Experience Premium Ceylon 
               <Box component="br" sx={{ display: { xs: 'none', sm: 'block' } }} />
-              {' '}& Elegant
+              {' '}Tea &
               <Box component="span" sx={{ color: 'rgba(202, 153, 58, 1)' }}>{" "}Gift Collections</Box>
             </Typography>
           </Box>

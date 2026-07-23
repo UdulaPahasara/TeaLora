@@ -40,11 +40,13 @@ const WhatsAppButton = () => {
         target="_blank"
         rel="noopener noreferrer"
         sx={{
-          width: { xs: '60px', sm: '70px', lg: '83.66px' },
-          height: { xs: '60px', sm: '70px', lg: '83.66px' },
+          width: '40px',
+          height: '40px',
           display: 'block',
           cursor: 'pointer',
-          
+          mt: { xs: '10px', sm: '15px', lg: '21.83px' },
+          mb: { xs: '10px', sm: '15px', lg: '21.83px' },
+          mr: { xs: '20px', sm: '30px', lg: '43.66px' },
         }}
       >
         <Box
@@ -52,7 +54,7 @@ const WhatsAppButton = () => {
           src={whatsappIcon}
           alt="WhatsApp"
           sx={{
-            width: '40px',
+            width: '100%',
             height: '100%',
             objectFit: 'contain',
           }}
