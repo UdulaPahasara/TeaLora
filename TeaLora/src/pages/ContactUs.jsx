@@ -48,12 +48,14 @@ const ContactUs = () => {
           setOpenSnackbar(true);
           reset();
           setIsSubmitting(false);
+          setTimeout(() => setOpenSnackbar(false), 6000);
       }, (error) => {
           console.error("EmailJS Error:", error);
           setSnackbarMessage(`Failed to send message: ${error.text || error.message || 'Check console'}`);
           setSnackbarSeverity('error');
           setOpenSnackbar(true);
           setIsSubmitting(false);
+          setTimeout(() => setOpenSnackbar(false), 6000);
       });
   };
 
@@ -399,6 +401,11 @@ const ContactUs = () => {
             >
               {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
             </Button>
+            {openSnackbar && (
+              <Alert severity={snackbarSeverity} sx={{ width: '100%', mt: -1 }}>
+                {snackbarMessage}
+              </Alert>
+            )}
           </Box>
 
           {/* Follow Us (Mobile/Tablet only) */}
@@ -505,11 +512,6 @@ const ContactUs = () => {
           Email: info@tealoraceylon.com
         </Typography>
       </Box>
-      <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleCloseSnackbar}>
-        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} sx={{ width: '100%' }}>
-          {snackbarMessage}
-        </Alert>
-      </Snackbar>
     </Box>
   );
 };
