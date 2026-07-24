@@ -489,11 +489,12 @@ const Sustainability = () => {
               mt: 1
             }}
           >
-            {[...Array(2)].map((_, i) => (
+            {[...Array(5)].map((_, i) => (
               <Box 
                 key={i}
                 onClick={() => scrollToCard(i)}
                 sx={{
+                  display: { xs: 'block', sm: i >= 4 ? 'none' : 'block', lg: i >= 2 ? 'none' : 'block' },
                   width: activeCardIndex === i ? '24px' : '8px',
                   height: '8px',
                   borderRadius: '10px',
