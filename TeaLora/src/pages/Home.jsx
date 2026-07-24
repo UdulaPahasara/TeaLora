@@ -111,6 +111,7 @@ const Home = () => {
           {/* Contact Us Button */}
           <Button 
             variant="contained"
+            onClick={() => navigate('/contact')}
             endIcon={<ArrowForwardIcon sx={{ fontSize: { xs: '14px', sm: '18px' } }} />}
             sx={{
               width: { xs: 'max-content', sm: '151px' },
