@@ -205,6 +205,7 @@ const OurProduct = () => {
                 sm: coll.reverse ? 'row-reverse' : 'row' 
               },
               alignItems: { xs: 'flex-start', sm: 'stretch' },
+              alignSelf: 'stretch',
               justifyContent: 'space-between',
               gap: { xs: 3, sm: 3, md: '32px', lg: '60px' },
             }}
@@ -241,18 +242,17 @@ const OurProduct = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 width: { xs: '100%', sm: 'auto' },
-                height: { lg: '400px' },
+                height: { xs: 'auto', sm: '100%' },
                 textAlign: { xs: 'center', sm: 'left' },
                 alignItems: { xs: 'center', sm: 'flex-start' },
-                justifyContent: 'center',
-                overflow: { xs: 'visible', sm: 'visible', md: 'visible', lg: 'hidden' },
+                justifyContent: { xs: 'flex-start', sm: 'space-between' },
               }}
             >
               <Typography 
                 sx={{
                   fontFamily: 'Poppins, sans-serif',
                   fontWeight: 600,
-                  fontSize: { xs: '14px', sm: '12px', md: '14px', lg: '13px' },
+                  fontSize: { xs: '16px', sm: '13px', md: '15px', lg: '16px' },
                   color: 'rgba(202, 153, 58, 1)',
                   mb: { xs: 1, sm: 0.5, lg: 0.5 }
                 }}
@@ -265,8 +265,8 @@ const OurProduct = () => {
                 sx={{
                   fontFamily: 'Poppins, sans-serif',
                   fontWeight: 700,
-                  fontSize: { xs: '24px', sm: '18px', md: '22px', lg: '24px' },
-                  lineHeight: { xs: '32px', sm: '24px', md: '30px', lg: '44px' },
+                  fontSize: { xs: '28px', sm: '20px', md: '26px', lg: '32px' },
+                  lineHeight: { xs: '32px', sm: '28px', md: '34px', lg: '48px' },
                   color: 'rgba(0, 0, 0, 1)',
                   mb: { xs: 2, sm: 1.5, lg: 0.5 }
                 }}
@@ -279,7 +279,7 @@ const OurProduct = () => {
                   sx={{
                     fontFamily: 'Poppins, sans-serif',
                     fontWeight: 600,
-                    fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '18px' },
+                    fontSize: { xs: '16px', sm: '13px', md: '15px', lg: '18px' },
                     color: '#757575',
                     mb: { xs: 1.5, sm: 1, lg: 4 }
                   }}
@@ -297,9 +297,9 @@ const OurProduct = () => {
                       sx={{
                         fontFamily: 'Poppins, sans-serif',
                         fontWeight: 400,
-                        fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '12px' },
+                        fontSize: { xs: '16px', sm: '13px', md: '14px', lg: '16px' },
                         color: '#757575',
-                        lineHeight: { lg: '18px' },
+                        lineHeight: { lg: '24px' },
                         mb: { xs: 0.4, sm: 0.25, lg: 0.3 }
                       }}
                     >
@@ -317,9 +317,9 @@ const OurProduct = () => {
                       sx={{
                         fontFamily: 'Poppins, sans-serif',
                         fontWeight: 400,
-                        fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '12px' },
+                        fontSize: { xs: '16px', sm: '13px', md: '14px', lg: '16px' },
                         color: '#757575',
-                        lineHeight: { lg: '18px' },
+                        lineHeight: { lg: '24px' },
                         mb: { xs: 0.4, sm: 0.25, lg: 0.3 }
                       }}
                     >
@@ -335,7 +335,7 @@ const OurProduct = () => {
                     sx={{
                       fontFamily: 'Poppins, sans-serif',
                       fontWeight: 600,
-                      fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '13px' },
+                      fontSize: { xs: '18px', sm: '14px', md: '16px', lg: '18px' },
                       color: '#000',
                       mb: { xs: 0.75, sm: 0.5, lg: 0.95 }
                     }}
@@ -350,9 +350,9 @@ const OurProduct = () => {
                         sx={{
                           fontFamily: 'Poppins, sans-serif',
                           fontWeight: 400,
-                          fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '12px' },
+                          fontSize: { xs: '16px', sm: '13px', md: '14px', lg: '16px' },
                           color: '#757575',
-                          lineHeight: { lg: '18px' },
+                          lineHeight: { lg: '24px' },
                           mb: { xs: 0.4, sm: 0.25, lg: 0.5 }
                         }}
                       >
@@ -368,7 +368,7 @@ const OurProduct = () => {
                   sx={{
                     fontFamily: 'Poppins, sans-serif',
                     fontWeight: 600,
-                    fontSize: { xs: '14px', sm: '12px', md: '13px', lg: '12px' },
+                    fontSize: { xs: '16px', sm: '13px', md: '15px', lg: '16px' },
                     color: '#000',
                     mb: { xs: 2, sm: 1.5, lg: 1.5 }
                   }}
@@ -395,7 +395,7 @@ const OurProduct = () => {
                   textTransform: 'uppercase',
                   color: '#fff',
                   boxShadow: 'none',
-                  mt: { xs: 2, sm: 2, lg: 3,md:0.5 },
+                  mt: { xs: 2, sm: 0 },
                   '&:hover': {
                     bgcolor: 'rgba(180, 130, 40, 1)',
                     boxShadow: 'none'
