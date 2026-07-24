@@ -61,7 +61,7 @@ const Home = () => {
           {/* Main Title Box */}
           <Box 
             sx={{
-              width: { xs: '325px', sm: '100%', md: '600px' }, 
+              width: { xs: '100%', sm: '100%', md: '600px' }, 
               mb: { xs: 2, md: 3, lg: '30px' } 
             }}
           >
@@ -70,8 +70,8 @@ const Home = () => {
               sx={{
                 fontFamily: 'Poppins, sans-serif',
                 fontWeight: 800,
-                fontSize: { xs: '19.5px', sm: '30px', md: '33px', lg: '33px' },
-                lineHeight: { xs: '31.09px', sm: '42px', md: '48px', lg: '54px' },
+                fontSize: { xs: '24px', sm: '30px', md: '33px', lg: '33px' },
+                lineHeight: { xs: '36px', sm: '42px', md: '48px', lg: '54px' },
                 textTransform: 'uppercase',
                 color: { xs: '#fff', sm: '#000' },
               }}
@@ -86,7 +86,7 @@ const Home = () => {
           {/* Subtitle Box */}
           <Box 
             sx={{
-              width: { xs: '274px', sm: '100%', md: '467px' }, 
+              width: { xs: '100%', sm: '100%', md: '467px' }, 
               mb: { xs: 4, md: 5, lg: '40px' }
             }}
           >
@@ -94,8 +94,8 @@ const Home = () => {
               sx={{
                 fontFamily: 'Poppins, sans-serif',
                 fontWeight: 400,
-                fontSize: { xs: '9.39px', sm: '15px', md: '16px' },
-                lineHeight: { xs: '14.67px', sm: '26px', md: '25px' },
+                fontSize: { xs: '13px', sm: '15px', md: '16px' },
+                lineHeight: { xs: '20px', sm: '26px', md: '25px' },
                 textTransform: 'capitalize',
                 color: { xs: 'rgba(255, 255, 255, 0.9)', sm: '#000' },
               }}
@@ -111,18 +111,19 @@ const Home = () => {
           {/* Contact Us Button */}
           <Button 
             variant="contained"
-            endIcon={<ArrowForwardIcon sx={{ fontSize: { xs: '10.5px', sm: '18px' } }} />}
+            endIcon={<ArrowForwardIcon sx={{ fontSize: { xs: '14px', sm: '18px' } }} />}
             sx={{
-              width: { xs: '88.58px', sm: '151px' },
-              height: { xs: '26.4px', sm: '45px' },
+              width: { xs: 'max-content', sm: '151px' },
+              height: { xs: '36px', sm: '45px' },
               bgcolor: 'rgba(202, 153, 58, 1)',
-              borderRadius: { xs: '5.87px', sm: '10px' },
-              padding: { xs: '5.87px 7.63px 6.45px 5.28px', sm: '10px 13px 11px 9px' },
-              gap: { xs: '5.87px', sm: '10px' },
+              borderRadius: { xs: '8px', sm: '10px' },
+              padding: { xs: '8px 16px', sm: '10px 13px 11px 9px' },
+              gap: { xs: '8px', sm: '10px' },
               fontFamily: 'Poppins, sans-serif',
               fontWeight: 600,
-              fontSize: { xs: '6.5px', sm: '14px' }, 
+              fontSize: { xs: '11px', sm: '14px' }, 
               textTransform: 'uppercase',
+              whiteSpace: 'nowrap',
               color: '#fff',
               boxShadow: 'none',
               '&:hover': {
