@@ -16,6 +16,32 @@ const Sustainability = () => {
   const scrollContainerRef = useRef(null);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
 
+  const isDown = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e) => {
+    isDown.current = true;
+    startX.current = e.pageX - scrollContainerRef.current.offsetLeft;
+    scrollLeft.current = scrollContainerRef.current.scrollLeft;
+  };
+
+  const handleMouseLeave = () => {
+    isDown.current = false;
+  };
+
+  const handleMouseUp = () => {
+    isDown.current = false;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDown.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX.current) * 2; // Scroll speed multiplier
+    scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
   const handleScroll = () => {
     if (scrollContainerRef.current) {
       const scrollLeft = scrollContainerRef.current.scrollLeft;
@@ -246,6 +272,10 @@ const Sustainability = () => {
           <Box 
             ref={scrollContainerRef}
             onScroll={handleScroll}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
             sx={{
               display: 'flex',
               flexDirection: 'row',
@@ -254,7 +284,6 @@ const Sustainability = () => {
               gap: '20px',
               width: '100%',
               overflowX: 'auto',
-              scrollSnapType: 'x mandatory',
               pb: 2,
               px: { xs: 2, md: 4, xl: 0 },
               '&::-webkit-scrollbar': {
@@ -270,7 +299,6 @@ const Sustainability = () => {
                 flex: '0 0 auto',
                 width: { xs: '280px', lg: '285px' },
                 height: { xs: 'auto', lg: '358px' },
-                scrollSnapAlign: 'start',
                 bgcolor: '#ffffff',
                 borderRadius: '20px',
                 display: 'flex',
@@ -308,7 +336,6 @@ const Sustainability = () => {
                 flex: '0 0 auto',
                 width: { xs: '280px', lg: '285px' },
                 height: { xs: 'auto', lg: '358px' },
-                scrollSnapAlign: 'start',
                 bgcolor: '#ffffff',
                 borderRadius: '20px',
                 display: 'flex',
@@ -346,7 +373,6 @@ const Sustainability = () => {
                 flex: '0 0 auto',
                 width: { xs: '280px', lg: '285px' },
                 height: { xs: 'auto', lg: '358px' },
-                scrollSnapAlign: 'start',
                 bgcolor: '#ffffff',
                 borderRadius: '20px',
                 display: 'flex',
@@ -384,7 +410,6 @@ const Sustainability = () => {
                 flex: '0 0 auto',
                 width: { xs: '280px', lg: '285px' },
                 height: { xs: 'auto', lg: '358px' },
-                scrollSnapAlign: 'start',
                 bgcolor: '#ffffff',
                 borderRadius: '20px',
                 display: 'flex',
@@ -422,7 +447,6 @@ const Sustainability = () => {
                 flex: '0 0 auto',
                 width: { xs: '280px', lg: '285px' },
                 height: { xs: 'auto', lg: '358px' },
-                scrollSnapAlign: 'start',
                 bgcolor: '#ffffff',
                 borderRadius: '20px',
                 display: 'flex',
@@ -464,7 +488,7 @@ const Sustainability = () => {
               mt: 1
             }}
           >
-            {[...Array(5)].map((_, i) => (
+            {[...Array(2)].map((_, i) => (
               <Box 
                 key={i}
                 onClick={() => scrollToCard(i)}
