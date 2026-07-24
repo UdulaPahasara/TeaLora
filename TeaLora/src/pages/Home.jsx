@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -23,6 +23,59 @@ import col6 from '../assets/Our Collection/6.webp';
 const Home = () => {
   const [showVision, setShowVision] = useState(true);
   const navigate = useNavigate();
+
+  const scrollContainerRef = useRef(null);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+
+  const isDown = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e) => {
+    isDown.current = true;
+    startX.current = e.pageX - scrollContainerRef.current.offsetLeft;
+    scrollLeft.current = scrollContainerRef.current.scrollLeft;
+  };
+
+  const handleMouseLeave = () => {
+    isDown.current = false;
+  };
+
+  const handleMouseUp = () => {
+    isDown.current = false;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDown.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX.current) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const child = scrollContainerRef.current.children[0];
+      const cardWidth = child ? child.offsetWidth + 20 : 377; // +20 for gap
+      const index = Math.round(scrollLeft / cardWidth);
+      if (index >= 0 && index <= 3 && index !== activeCardIndex) {
+        setActiveCardIndex(index);
+      }
+    }
+  };
+
+  const scrollToCard = (index) => {
+    if (scrollContainerRef.current) {
+      const child = scrollContainerRef.current.children[0];
+      const cardWidth = child ? child.offsetWidth + 20 : 377;
+      scrollContainerRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setActiveCardIndex(index);
+    }
+  };
 
   return (
     <>
@@ -303,6 +356,12 @@ const Home = () => {
 
         {/* Desktop Carousel */}
         <Box 
+          ref={scrollContainerRef}
+          onScroll={handleScroll}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
           sx={{
             display: { xs: 'none', sm: 'flex' },
             justifyContent: 'flex-start',
@@ -395,6 +454,33 @@ const Home = () => {
                 {item.label}
               </Box>
             </Box>
+          ))}
+        </Box>
+
+        {/* Pagination Dots for Desktop Carousel */}
+        <Box 
+          sx={{ 
+            display: { xs: 'none', sm: 'flex' }, 
+            justifyContent: 'center', 
+            gap: '8px',
+            mt: 3,
+            mb: 2
+          }}
+        >
+          {[...Array(4)].map((_, i) => (
+            <Box 
+              key={i}
+              onClick={() => scrollToCard(i)}
+              sx={{
+                width: activeCardIndex === i ? '24px' : '8px',
+                height: '8px',
+                borderRadius: '10px',
+                bgcolor: 'rgba(202, 153, 58, 1)',
+                opacity: activeCardIndex === i ? 1 : 0.4,
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+            />
           ))}
         </Box>
 

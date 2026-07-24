@@ -286,6 +286,7 @@ const Sustainability = () => {
               overflowX: 'auto',
               pb: 2,
               px: { xs: 2, md: 4, xl: 0 },
+              cursor: 'pointer',
               '&::-webkit-scrollbar': {
                 display: 'none'
               },
